@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TicTacToe</string>
+    <string name="Einzelspieler" />
+    <string name="button_Einzelspieler">Einzelspieler</string>
+    <string name="button_Multiplayer">Multiplayer</string>
+    <string name="btnLeicht">Leicht</string>
+    <string name="btnSchwierig">Schwierig</string>
+    <string name="btnMehrspieler">Mehrspieler</string>
+    <string name="btnBack">Zurück</string>
 </resources>
