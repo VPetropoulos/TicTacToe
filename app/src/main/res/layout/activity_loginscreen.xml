@@ -7,7 +7,6 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.myfirstapp.billys.tictactoe.Loginscreen">
 
     <TextView android:id="@+id/link_signup"
@@ -17,29 +16,37 @@
         android:gravity="center"
         android:textSize="16dip"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/darker_gray"/>
 
     <EditText
         android:id="@+id/InputPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:inputType="textPassword"
         android:hint="Enter Password.."
         android:gravity="center"
         android:fontFamily="sans-serif"
-        android:layout_marginBottom="77dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginTop="290dp"
         android:layout_alignBottom="@+id/btn_login"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@android:color/darker_gray"
+
+         />
 
     <EditText
         android:id="@+id/InputName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:hint="Enter Name.."
         android:gravity="center"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="250dp"
         android:layout_alignBottom="@+id/InputPassword"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@android:color/darker_gray"
+         />
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_login"
