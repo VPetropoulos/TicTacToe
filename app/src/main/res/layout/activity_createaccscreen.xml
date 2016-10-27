@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:id="@+id/activity_createaccscreen"
+    tools:context="com.myfirstapp.billys.tictactoe.Createaccscreen">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <EditText
+            android:id="@+id/InputName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:hint="Enter name.."
+            android:padding="10dp"
+            android:maxLines="1"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"
+            android:fontFamily="sans-serif" />
+
+        <EditText
+            android:id="@+id/InputPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:hint="Enter password.."
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:maxLines="1"
+            android:textColor="@color/input_login"
+            android:textColorHint="@color/input_login_hint"
+            android:fontFamily="sans-serif" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_createAcc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/btn_login_bg"
+            android:text="Create account"
+            android:textColor="@color/btn_login"
+            android:fontFamily="sans-serif" />
+
+        <TextView android:id="@+id/link_goback"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@null"
+            android:text="Whups, I already got an account.."
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

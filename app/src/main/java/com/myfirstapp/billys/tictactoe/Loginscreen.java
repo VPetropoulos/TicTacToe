@@ -22,7 +22,6 @@ public class Loginscreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_loginscreen);
 
         _inputPassword = (EditText) findViewById(R.id.InputPassword);
@@ -31,6 +30,7 @@ public class Loginscreen extends AppCompatActivity {
         TextView _link_signup = (TextView) findViewById(R.id.link_signup);
 
         final Intent start_mainActivity = new Intent(this, MainActivity.class);
+        final Intent start_Createaccscreen = new Intent(this, Createaccscreen.class);
 
 
         // Button onClick Listener erstellen
@@ -49,6 +49,14 @@ public class Loginscreen extends AppCompatActivity {
             }
         });
 
+        _link_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    startActivity(start_Createaccscreen);
+            }
+        });
+
+
 
     }
     //Logik für die Prüfung der Logindaten
@@ -59,7 +67,7 @@ public class Loginscreen extends AppCompatActivity {
         s_password = _inputPassword.getText().toString();
 
         if (s_name.isEmpty()) {
-            _inputName.setError("enter a valid name");
+            _inputName.setError("Enter a valid name");
             valid = false;
         }
 
