@@ -21,9 +21,7 @@ public class MainActivity extends Activity
         final Button leicht = (Button) findViewById(R.id.btnLeicht);
         final Button schwer = (Button) findViewById(R.id.btnSchwer);
         final Button back = (Button) findViewById(R.id.btnBack);
-
-
-
+        
 
         einzelspieler.setOnClickListener(new View.OnClickListener()
         {
@@ -37,6 +35,8 @@ public class MainActivity extends Activity
                 back.setVisibility(View.VISIBLE);
             }
         });
+
+
 
         back.setOnClickListener(new View.OnClickListener()
         {
@@ -56,7 +56,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                //Ins Activity EinzelspielerActivity wechseln....
+                setContentView(R.layout.activity_einzelspieler__leicht);
             }
         });
     }

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.myfirstapp.billys.tictactoe.MainActivity">
+
+
+    <Button
+        android:id="@+id/btnObenLinks"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+
+    <Button
+        android:id="@+id/btnObenMitte"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/btnObenLinks"
+        android:layout_alignTop="@id/btnObenMitte"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_marginLeft="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+
+    <Button
+        android:id="@+id/btnObenRechts"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/btnObenMitte"
+        android:layout_alignTop="@id/btnObenMitte"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_marginLeft="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+
+    <Button
+        android:id="@+id/btnMitteLinks"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/btnObenLinks"
+        android:layout_marginLeft="5dp"
+       android:layout_marginTop="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+
+    <Button
+        android:id="@+id/btnMitteMitte"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_toRightOf="@id/btnMitteLinks"
+        android:layout_alignTop="@id/btnMitteLinks"
+        android:layout_marginLeft="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+
+    <Button
+        android:id="@+id/btnMitteRechts"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_toRightOf="@id/btnMitteMitte"
+        android:layout_alignTop="@id/btnMitteMitte"
+        android:layout_marginLeft="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+
+    <Button
+        android:id="@+id/btnUntenLinks"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/btnMitteLinks"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+    <Button
+        android:id="@+id/btnUntenMitte"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_toRightOf="@id/btnUntenLinks"
+        android:layout_alignTop="@id/btnUntenLinks"
+        android:layout_marginLeft="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+
+    <Button
+        android:id="@+id/btnUntenRechts"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/btn_login_bg"
+        android:textColor="@color/btn_login"
+        android:layout_toRightOf="@id/btnUntenMitte"
+        android:layout_alignTop="@id/btnUntenMitte"
+        android:layout_marginLeft="5dp"
+        android:text=" "
+        android:textSize="70dp"/>
+</RelativeLayout>
+

@@ -7,4 +7,9 @@
     <string name="btnSchwierig">Schwierig</string>
     <string name="btnMehrspieler">Mehrspieler</string>
     <string name="btnBack">Zurück</string>
+    <string name="spieler">Spieler VS. Spieler</string>
+    <string name="spieler_spieler">Spieler VS. Spieler</string>
+    <string name="spielerVSspieler">Spieler VS. Spieler</string>
+    <string name="Online">Online</string>
+    <string name="OnlineBack">Züruck</string>
 </resources>
