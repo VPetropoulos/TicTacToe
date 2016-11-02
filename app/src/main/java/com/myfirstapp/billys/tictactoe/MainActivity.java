@@ -56,7 +56,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                setContentView(R.layout.activity_einzelspieler__leicht);
+                setContentView(R.layout.activity_one_player_easy);
             }
         });
     }
