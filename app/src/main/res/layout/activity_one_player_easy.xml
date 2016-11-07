@@ -11,111 +11,69 @@
     tools:context="com.myfirstapp.billys.tictactoe.OnePlayerEasy">
 
     <Button
-        android:id="@+id/btnObenLinks"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
-        android:textSize="70sp"/>
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnLinksOben"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btnLinksMitte"
+        android:nestedScrollingEnabled="false" />
 
     <Button
-        android:id="@+id/btnObenMitte"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_toEndOf="@id/btnObenLinks"
-        android:layout_alignTop="@id/btnObenMitte"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_marginStart="5dp"
-        android:textSize="70sp"/>
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnMitteOben"
+        android:layout_above="@+id/btnLinksMitte"
+        android:layout_toEndOf="@+id/btnLinksMitte" />
 
     <Button
-        android:id="@+id/btnObenRechts"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_toEndOf="@id/btnObenMitte"
-        android:layout_alignTop="@id/btnObenMitte"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_marginStart="5dp"
-        android:textSize="70sp"/>
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnRechtsOben"
+        android:layout_above="@+id/btnRechtsMitte"
+        android:layout_toEndOf="@+id/btnMitteOben" />
 
     <Button
-        android:id="@+id/btnMitteLinks"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/btnObenLinks"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:textSize="70sp"/>
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnLinksMitte"
+        android:layout_below="@+id/btnLinksOben"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp" />
 
     <Button
+        android:layout_width="106dp"
+        android:layout_height="106dp"
         android:id="@+id/btnMitteMitte"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_toEndOf="@id/btnMitteLinks"
-        android:layout_alignTop="@id/btnMitteLinks"
-        android:layout_marginStart="5dp"
-        android:textSize="70sp"/>
+        android:layout_below="@+id/btnMitteOben"
+        android:layout_toEndOf="@+id/btnLinksMitte" />
 
     <Button
-        android:id="@+id/btnMitteRechts"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_toEndOf="@id/btnMitteMitte"
-        android:layout_alignTop="@id/btnMitteMitte"
-        android:layout_marginStart="5dp"
-        android:textSize="70sp"/>
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnRechtsMitte"
+        android:layout_above="@+id/btnMitteUnten"
+        android:layout_toEndOf="@+id/btnMitteMitte" />
 
     <Button
-        android:id="@+id/btnUntenLinks"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/btnMitteLinks"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:textSize="70sp"/>
-    <Button
-        android:id="@+id/btnUntenMitte"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_toEndOf="@id/btnUntenLinks"
-        android:layout_alignTop="@id/btnUntenLinks"
-        android:layout_marginStart="5dp"
-        android:textSize="70sp"/>
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnLinksUnten"
+        android:layout_below="@+id/btnLinksMitte"
+        android:layout_toStartOf="@+id/btnMitteMitte" />
 
     <Button
-        android:id="@+id/btnUntenRechts"
-        android:text=""
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/btn_login_bg"
-        android:textColor="@color/btn_login"
-        android:layout_toEndOf="@id/btnUntenMitte"
-        android:layout_alignTop="@id/btnUntenMitte"
-        android:layout_marginStart="5dp"
-        android:textSize="70sp"/>
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnMitteUnten"
+        android:layout_alignTop="@+id/btnLinksUnten"
+        android:layout_toEndOf="@+id/btnLinksUnten" />
+
+    <Button
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:id="@+id/btnRechtsUnten"
+        android:layout_below="@+id/btnRechtsMitte"
+        android:layout_alignStart="@+id/btnRechtsMitte" />
 
 </RelativeLayout>

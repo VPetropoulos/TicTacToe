@@ -15,7 +15,7 @@ public class OnePlayerEasy extends AppCompatActivity
         setContentView(R.layout.activity_one_player_easy);
 
 
-        final Button oLinks = (Button) findViewById(R.id.btnObenLinks);
+        final Button oLinks = (Button) findViewById(R.id.btnLinksOben);
 
         oLinks.setOnClickListener(new View.OnClickListener()
         {
