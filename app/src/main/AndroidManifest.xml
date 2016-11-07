@@ -30,7 +30,8 @@
             android:name=".Createaccscreen"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".Einzelspieler_Leicht"></activity>
+        <activity android:name=".Einzelspieler_Leicht" />
+        <activity android:name=".OnePlayerEasy" />
     </application>
 
 </manifest>
