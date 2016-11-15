@@ -1,6 +1,7 @@
 package com.myfirstapp.billys.tictactoe;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -21,7 +22,7 @@ public class MainActivity extends Activity
         final Button leicht = (Button) findViewById(R.id.btnLeicht);
         final Button schwer = (Button) findViewById(R.id.btnSchwer);
         final Button back = (Button) findViewById(R.id.btnBack);
-        
+        final Intent start_OnePlayerEasy = new Intent(this, OnePlayerEasy.class);
 
         einzelspieler.setOnClickListener(new View.OnClickListener()
         {
@@ -56,7 +57,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                setContentView(R.layout.activity_one_player_easy);
+                startActivity(start_OnePlayerEasy);
             }
         });
     }

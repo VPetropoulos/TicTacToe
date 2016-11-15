@@ -10,9 +10,8 @@
     android:id="@+id/activity_one_player_easy"
     tools:context="com.myfirstapp.billys.tictactoe.OnePlayerEasy">
 
-    <Button
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnObenLinks"
-        android:text=""
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="@color/btn_login_bg"
