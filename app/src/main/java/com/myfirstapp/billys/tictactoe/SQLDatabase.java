@@ -23,8 +23,8 @@ public class SQLDatabase extends SQLiteOpenHelper {
 
     public long insertRecord(SQLiteDatabase db){
         ContentValues cv = new ContentValues();
-        cv.put("user_name", "test");
-        cv.put("user_pw", "test");
+        cv.put("user_name", "test1");
+        cv.put("user_pw", "test1");
         long rowId = db.insert(DATABASE_TABLE,null,cv);
         return rowId;
     }
