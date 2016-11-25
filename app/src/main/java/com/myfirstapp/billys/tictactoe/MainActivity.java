@@ -22,6 +22,7 @@ public class MainActivity extends Activity
         final Button leicht = (Button) findViewById(R.id.btnLeicht);
         final Button schwer = (Button) findViewById(R.id.btnSchwer);
         final Button back = (Button) findViewById(R.id.btnBack);
+
         final Intent start_OnePlayerEasy = new Intent(this, OnePlayerEasy.class);
 
         einzelspieler.setOnClickListener(new View.OnClickListener()
