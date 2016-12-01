@@ -15,10 +15,9 @@ import android.widget.Toast;
 public class Loginscreen extends AppCompatActivity {
     EditText _inputPassword;
     EditText _inputName;
-    AppCompatButton _btn_login;
-    TextView _link_signup;
     String s_name;
     String s_password;
+    Loginscreen instance = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,20 +63,21 @@ public class Loginscreen extends AppCompatActivity {
     //Logik für die Prüfung der Logindaten
     public boolean validate() {
         boolean valid;
-
         s_name = _inputName.getText().toString();
         s_password = _inputPassword.getText().toString();
 
         if (s_name.isEmpty()) {
             _inputName.setError("Enter a valid name");
             valid = false;
+            return valid;
         }
 
         if (s_password.isEmpty() || s_password.length() < 4 || s_password.length() > 10) {
             _inputPassword.setError("4 to 10 characters allowed");
             valid = false;
+            return valid;
         }
-        if(s_name.equals("test") && s_password.equals("test")){
+        if(SQLDatabase.getinstance(instance).login(s_name, s_password)){
             valid = true;
             return valid;
         }

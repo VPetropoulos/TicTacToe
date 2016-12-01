@@ -54,15 +54,6 @@
             android:textColor="@color/btn_login"
             android:fontFamily="sans-serif" />
 
-        <TextView android:id="@+id/link_goback"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dip"
-            android:background="@null"
-            android:text="Whups, I already got an account.."
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
     </LinearLayout>
 
 </LinearLayout>
