@@ -15,6 +15,17 @@ import java.util.Timer;
 public class OnePlayerEasy extends AppCompatActivity
 {
     int b = 1;
+    Button oLinks;
+    Button oMitte;
+    Button oRechts;
+
+    Button mLinks;
+    Button mMitte;
+    Button mRechts;
+
+    Button uLinks;
+    Button uMitte;
+    Button uRechts;
 
 
 
@@ -22,18 +33,18 @@ public class OnePlayerEasy extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_player_easy);
+        oLinks = (Button) findViewById(R.id.btnObenLinks);
+        oMitte = (Button) findViewById(R.id.btnObenMitte);
+        oRechts = (Button) findViewById(R.id.btnObenRechts);
 
-        final Button oLinks = (Button) findViewById(R.id.btnObenLinks);
-        final Button oMitte = (Button) findViewById(R.id.btnObenMitte);
-        final Button oRechts = (Button) findViewById(R.id.btnObenRechts);
+        mLinks = (Button) findViewById(R.id.btnMitteLinks);
+        mMitte = (Button) findViewById(R.id.btnMitteMitte);
+        mRechts = (Button) findViewById(R.id.btnMitteRechts);
 
-        final Button mLinks = (Button) findViewById(R.id.btnMitteLinks);
-        final Button mMitte = (Button) findViewById(R.id.btnMitteMitte);
-        final Button mRechts = (Button) findViewById(R.id.btnMitteRechts);
+        uLinks = (Button) findViewById(R.id.btnUntenLinks);
+        uMitte = (Button) findViewById(R.id.btnUntenMitte);
+        uRechts = (Button) findViewById(R.id.btnUntenRechts);
 
-        final Button uLinks = (Button) findViewById(R.id.btnUntenLinks);
-        final Button uMitte = (Button) findViewById(R.id.btnUntenMitte);
-        final Button uRechts = (Button) findViewById(R.id.btnUntenRechts);
 
         oLinks.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -243,18 +254,6 @@ public class OnePlayerEasy extends AppCompatActivity
 
     public void autoPlayer()
     {
-        final Button oLinks = (Button) findViewById(R.id.btnObenLinks);
-        final Button oMitte = (Button) findViewById(R.id.btnObenMitte);
-        final Button oRechts = (Button) findViewById(R.id.btnObenRechts);
-
-        final Button mLinks = (Button) findViewById(R.id.btnMitteLinks);
-        final Button mMitte = (Button) findViewById(R.id.btnMitteMitte);
-        final Button mRechts = (Button) findViewById(R.id.btnMitteRechts);
-
-        final Button uLinks = (Button) findViewById(R.id.btnUntenLinks);
-        final Button uMitte = (Button) findViewById(R.id.btnUntenMitte);
-        final Button uRechts = (Button) findViewById(R.id.btnUntenRechts);
-
         mainloop:
         while (true)
         {
@@ -373,17 +372,6 @@ public class OnePlayerEasy extends AppCompatActivity
 
     public void foundWinner()
     {
-        final Button oLinks = (Button) findViewById(R.id.btnObenLinks);
-        final Button oMitte = (Button) findViewById(R.id.btnObenMitte);
-        final Button oRechts = (Button) findViewById(R.id.btnObenRechts);
-
-        final Button mLinks = (Button) findViewById(R.id.btnMitteLinks);
-        final Button mMitte = (Button) findViewById(R.id.btnMitteMitte);
-        final Button mRechts = (Button) findViewById(R.id.btnMitteRechts);
-
-        final Button uLinks = (Button) findViewById(R.id.btnUntenLinks);
-        final Button uMitte = (Button) findViewById(R.id.btnUntenMitte);
-        final Button uRechts = (Button) findViewById(R.id.btnUntenRechts);
 
         //final Intent start_MainActivity = new Intent(this, MainActivity.class);
 
@@ -394,48 +382,69 @@ public class OnePlayerEasy extends AppCompatActivity
         {
             ad.setMessage(oMitte.getText() + " hat Gewonnen");
             ad.show();
+            wipeGame();
         }
         else if (mLinks.getText() == mMitte.getText() && mMitte.getText() == mRechts.getText() && !mMitte.getText().toString().isEmpty())
         {
             ad.setMessage(mMitte.getText() + " hat Gewonnen");
             ad.show();
+            wipeGame();
         }
         else if (uLinks.getText() == uMitte.getText() && uMitte.getText() == uRechts.getText() && !uMitte.getText().toString().isEmpty())
         {
         ad.setMessage(uMitte.getText() + " hat Gewonnen");
         ad.show();
+            wipeGame();
         }
         else if (oLinks.getText() == mLinks.getText() && mLinks.getText() == uLinks.getText() && !mLinks.getText().toString().isEmpty())
         {
             ad.setMessage(mLinks.getText() + " hat Gewonnen");
             ad.show();
+            wipeGame();
         }
         else if (oMitte.getText() == mMitte.getText() && mMitte.getText() == uMitte.getText() && !mMitte.getText().toString().isEmpty())
         {
             ad.setMessage(mMitte.getText() + " hat Gewonnen");
             ad.show();
+            wipeGame();
         }
         else if (oRechts.getText() == mRechts.getText() && mRechts.getText() == uRechts.getText() && !mRechts.getText().toString().isEmpty())
         {
             ad.setMessage(mRechts.getText() + " hat Gewonnen");
             ad.show();
+            wipeGame();
         }
         else if (oLinks.getText() == mMitte.getText() && mMitte.getText() == uRechts.getText() && !mMitte.getText().toString().isEmpty())
         {
             ad.setMessage(mMitte.getText() + " hat Gewonnen");
             ad.show();
+            wipeGame();
         }
         else if (oRechts.getText() == mMitte.getText() && mMitte.getText() == uLinks.getText() && !mMitte.getText().toString().isEmpty())
         {
             ad.setMessage(mMitte.getText() + " hat Gewonnen");
             ad.show();
-
+            wipeGame();
         }
-
-        else
+        else if(!oLinks.getText().toString().isEmpty() && !oMitte.getText().toString().isEmpty() && !oRechts.getText().toString().isEmpty() && !mLinks.getText().toString().isEmpty() && !mMitte.getText().toString().isEmpty() && !mLinks.getText().toString().isEmpty() && !uLinks.getText().toString().isEmpty() && !uMitte.getText().toString().isEmpty() && !uRechts.getText().toString().isEmpty())
         {
-
+            ad.setMessage("Unentschieden");
+            ad.show();
+            wipeGame();
         }
     }
 
+    public void wipeGame()
+    {
+        oLinks.setText(null);
+        oMitte.setText(null);
+        oRechts.setText(null);
+        mLinks.setText(null);
+        mMitte.setText(null);
+        mRechts.setText(null);
+        uLinks.setText(null);
+        uMitte.setText(null);
+        uRechts.setText(null);
+        b=1;
+    }
 }
