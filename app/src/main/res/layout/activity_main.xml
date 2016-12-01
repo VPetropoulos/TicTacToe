@@ -73,12 +73,12 @@
 
     </LinearLayout>
 
-    <TextView android:id="@+id/link_signup"
+    <TextView
+        android:id="@+id/link_signup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@null"
-        android:text="Logged in as USERNAME"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15dp" />
