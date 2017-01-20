@@ -16,7 +16,7 @@ public class SQLDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
 
     db.execSQL( "CREATE TABLE "+ DATABASE_TABLE + " (user_id INTEGER PRIMARY KEY, user_name VARCHAR(11), user_pw VARCHAR(11));");
-}
+    }
 
 
     public boolean login(String username, String password){

@@ -21,6 +21,7 @@ public class Loginscreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Oberfläche erstellen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginscreen);
 
@@ -33,7 +34,8 @@ public class Loginscreen extends AppCompatActivity {
         final Intent start_Createaccscreen = new Intent(this, Createaccscreen.class);
 
 
-        // Button onClick Listener erstellen
+        // LoginButton onClick -> Logindaten prüfen und User Resultat mitteilen
+        //Bei Erfolg zum Menü wechseln
         _btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +52,7 @@ public class Loginscreen extends AppCompatActivity {
             }
         });
 
+        //Button Account erstellen onClick -> Zu Createaccscreen wechseln
         _link_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,17 +69,22 @@ public class Loginscreen extends AppCompatActivity {
         s_name = _inputName.getText().toString();
         s_password = _inputPassword.getText().toString();
 
+        //Name leer -> Fehlerprompt, Valid =FALSE
         if (s_name.isEmpty()) {
             _inputName.setError("Enter a valid name");
             valid = false;
             return valid;
         }
 
+        //Passwort leer oder nicht 4-10 Zeichen lang -> Fehlerprompt, Valid =False
         if (s_password.isEmpty() || s_password.length() < 4 || s_password.length() > 10) {
             _inputPassword.setError("4 to 10 characters allowed");
             valid = false;
             return valid;
         }
+
+        //Anmeldedaten mit der SQLdatenbank verlgleichen -> Wenn vorhanden valid =true
+        //Wenn nicht valid =False
         if(SQLDatabase.getinstance(instance).login(s_name, s_password)){
             valid = true;
             return valid;

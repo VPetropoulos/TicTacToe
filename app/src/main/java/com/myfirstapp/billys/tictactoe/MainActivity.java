@@ -13,6 +13,7 @@ public class MainActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        //Oberfläche für das Menü erstellen
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
@@ -25,6 +26,7 @@ public class MainActivity extends Activity
 
         final Intent start_OnePlayerEasy = new Intent(this, OnePlayerEasy.class);
 
+        //Schwierigkeitsstufe Einzelspieler auswählen
         einzelspieler.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -39,7 +41,7 @@ public class MainActivity extends Activity
         });
 
 
-
+        //Zum Menü ZURÜCK wechseln und nur Einzel- und Mehrspieler anzeigen
         back.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -53,6 +55,7 @@ public class MainActivity extends Activity
             }
         });
 
+        //Einzelspieler leicht starten onClick
         leicht.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -20,6 +20,7 @@ public class Createaccscreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Oberfläche erstellen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createaccscreen);
 
@@ -31,15 +32,16 @@ public class Createaccscreen extends AppCompatActivity {
         dbmgr = new SQLDatabase(this);
 
 
-
+        //Button: Account erstellen -- ONCLICK
         _btn_createAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (validate())
                 {
-                    //Hier muss noch der User in die SQL Datenbank geschrieben werden
+                    //Account erstellen wenn validate() true ist (4-10 Zeichen; nicht leer)
                     SQLDatabase.getinstance(instance).CreateAccSQL(s_name, s_password);
 
+                    //User eine Rückmeldung geben und auf Loginscreen wechseln
                     Toast.makeText(getBaseContext(), "Account created", Toast.LENGTH_LONG).show();
                     startActivity(start_loginscreen);
                 }
@@ -65,17 +67,19 @@ public class Createaccscreen extends AppCompatActivity {
         s_name = _inputName.getText().toString();
         s_password = _inputPassword.getText().toString();
 
+        //IF Benutzername Leer oder not 4-10 Zeichen -- Fehler mit prompt
         if (s_name.isEmpty()|| s_name.length() < 4 || s_name.length() > 10) {
             _inputName.setError("Your Username has to be 4 to 10 characters long");
             valid = false;
         }
 
+        //IF Passwort Leer oder not 4-10 Zeichen -- Fehler mit prompt
         if (s_password.isEmpty() || s_password.length() < 4 || s_password.length() > 10) {
             _inputPassword.setError("4 to 10 characters allowed");
             valid = false;
         }
 
-
+        //Ansonsten True
         return valid;
     }
 }
