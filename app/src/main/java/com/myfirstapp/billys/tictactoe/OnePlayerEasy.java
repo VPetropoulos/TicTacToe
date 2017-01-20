@@ -13,6 +13,7 @@ import android.widget.Button;
 
 public class OnePlayerEasy extends AppCompatActivity
 {
+    //Spielzug des Spielers auf 1 setzen
     int b = 1;
     Button oLinks;
     Button oMitte;
@@ -44,7 +45,9 @@ public class OnePlayerEasy extends AppCompatActivity
         uMitte = (Button) findViewById(R.id.btnUntenMitte);
         uRechts = (Button) findViewById(R.id.btnUntenRechts);
 
-
+        //START SPIELZÜGE
+        //Felder onClick auf X setzen und den Spielzug hochzählen. COMPUTER wird nicht gezählt.
+        //COMPUTER ist nach dem Spieler dran wenn der 6. Spielzug des Spielers nicht angefangen hat
         oLinks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,6 +66,7 @@ public class OnePlayerEasy extends AppCompatActivity
                 {
 
                 }
+                //Prüfung nach Gewinner nach jeder Runde (Runde= SPIELER + COMPUTER waren beide dran)
                 foundWinner();
             }
         });
@@ -248,17 +252,18 @@ public class OnePlayerEasy extends AppCompatActivity
 
             }
         });
-
+        //ENDE SPIELZÜGE
     }
 
+    //COMPUTER
     public void autoPlayer()
     {
         mainloop:
         while (true)
         {
-
+            //Zufälliger Case für 0-8 -> Für die 9 möglichen Felder
             int zahl = (int)((Math.random()) * 8);
-
+            //Ist ein Feld bereits mit X belegt => continue
             switch (zahl)
             {
                 case 0:
@@ -368,7 +373,9 @@ public class OnePlayerEasy extends AppCompatActivity
             }
         }
     }
+    //ENDE COMPUTER
 
+    //START Gewinner ermitteln
     public void foundWinner()
     {
 
@@ -376,7 +383,10 @@ public class OnePlayerEasy extends AppCompatActivity
 
         AlertDialog ad = new AlertDialog.Builder(this).create();
 
-
+        //Wenn 3 Felder nebeinander mit dem selben Symbol ausgefüllt und die mitte davon nicht leer ->
+        // -> Zeichen in der Mitte bestimmt den Sieger
+        //Alertdialog aufrufen
+        //Spielfeld / Spielzugzähler mit wipeGame() zurücksetzen
         if (oLinks.getText() == oMitte.getText() && oMitte.getText() == oRechts.getText() && !oMitte.getText().toString().isEmpty())
         {
             ad.setMessage(oMitte.getText() + " hat Gewonnen");
@@ -432,7 +442,9 @@ public class OnePlayerEasy extends AppCompatActivity
             wipeGame();
         }
     }
+    //ENDE Gewinner ermitteln
 
+    //Alle Felder leeren und Spielzug auf 1 setzen
     public void wipeGame()
     {
         oLinks.setText(null);
