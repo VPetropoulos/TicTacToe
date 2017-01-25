@@ -25,6 +25,7 @@ public class MainActivity extends Activity
         final Button back = (Button) findViewById(R.id.btnBack);
 
         final Intent start_OnePlayerEasy = new Intent(this, OnePlayerEasy.class);
+        final Intent start_MultiPlayerLocal = new Intent(this, MultiPlayerLocal.class);
 
         //Schwierigkeitsstufe Einzelspieler auswählen
         einzelspieler.setOnClickListener(new View.OnClickListener()
@@ -64,6 +65,18 @@ public class MainActivity extends Activity
                 startActivity(start_OnePlayerEasy);
             }
         });
+
+        //Multiplayerlocal starten onClick
+        mehrspieler.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(start_MultiPlayerLocal);
+            }
+        });
+
+
     }
 }
 
