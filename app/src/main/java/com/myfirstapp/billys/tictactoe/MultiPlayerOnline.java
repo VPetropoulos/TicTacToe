@@ -1,5 +1,5 @@
 package com.myfirstapp.billys.tictactoe;
-
+import java.io.IOException;
 
 
 import android.os.Bundle;
@@ -48,12 +48,29 @@ public class MultiPlayerOnline extends AppCompatActivity
         uRechts = (Button) findViewById(R.id.btnUntenRechts);
 
         PIRCBOT bot = new PIRCBOT();
-        try() {
-            bot.connect("azubu.fl.us.quakenet.org");
-        }
-        catch(){
+        bot.setVerbose(true);
+        try {
+            System.out.println("Attempting to join server");
+            bot.connect("servercentral.il.us.quakenet.org", 6667);
+            bot.joinChannel("#irchacks");
 
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        if (bot.isConnected()) {
+            System.out.println("Connected!");
+        }
+        else {
+            System.out.println("Failed to connect.");
+            return;
+        }
+
+
+
+
         //START SPIELZÜGE
         //Felder onClick auf X setzen und den Spielzug hochzählen. COMPUTER wird nicht gezählt.
         //COMPUTER ist nach dem Spieler dran wenn der 6. Spielzug des Spielers nicht angefangen hat

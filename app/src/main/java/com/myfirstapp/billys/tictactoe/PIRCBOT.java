@@ -6,7 +6,7 @@ import org.jibble.pircbot.PircBot;
 
 public class PIRCBOT extends PircBot {
 
-    public MyBot() {
+    public PIRCBOT() {
         this.setName("MyBot");
     }
 
