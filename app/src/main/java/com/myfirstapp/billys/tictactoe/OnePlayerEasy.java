@@ -45,214 +45,33 @@ public class OnePlayerEasy extends AppCompatActivity
         uMitte = (Button) findViewById(R.id.btnUntenMitte);
         uRechts = (Button) findViewById(R.id.btnUntenRechts);
 
-        //START SPIELZÜGE
-        //Felder onClick auf X setzen und den Spielzug hochzählen. COMPUTER wird nicht gezählt.
-        //COMPUTER ist nach dem Spieler dran wenn der 6. Spielzug des Spielers nicht angefangen hat
-        oLinks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//Globalen Listener für die Buttons erstellen
+        View.OnClickListener button_listener = new View.OnClickListener() {
+            public void onClick(View v) {
+                Button button = (Button) v;
 
-                if (oLinks.getText().toString().isEmpty())
+                button.setText("X");
+                button.setClickable(false);
+                b++;
+
+                if (b <= 5)
                 {
-                    oLinks.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-
+                    autoPlayer();
                 }
-                else if (oLinks.getText() == "O")
-                {
-
-                }
-                //Prüfung nach Gewinner nach jeder Runde (Runde= SPIELER + COMPUTER waren beide dran)
+                // after_move function to check the result and decide.
                 foundWinner();
             }
-        });
-
-        oMitte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (oMitte.getText().toString().isEmpty())
-                {
-                    oMitte.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-                }
-                else if (oMitte.getText() == "O")
-                {
-
-                }
-                foundWinner();
-
-            }
-        });
-
-        oRechts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (oRechts.getText().toString().isEmpty())
-                {
-                    oRechts.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-                }
-                else if (oRechts.getText() == "O")
-                {
-
-                }
-                foundWinner();
-
-            }
-        });
-
-        mLinks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (mLinks.getText().toString().isEmpty())
-                {
-                    mLinks.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-                }
-                else if (mLinks.getText() == "O")
-                {
-
-                }
-                foundWinner();
-            }
-        });
-
-        mMitte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (mMitte.getText().toString().isEmpty())
-                {
-                    mMitte.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-                }
-                else if (mMitte.getText() == "O")
-                {
-
-                }
-                foundWinner();
-            }
-        });
-
-        mRechts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (mRechts.getText().toString().isEmpty())
-                {
-                    mRechts.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-                }
-                else if (mRechts.getText() == "O")
-                {
-
-                }
-                foundWinner();
-            }
-        });
-
-        uLinks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (uLinks.getText().toString().isEmpty())
-                {
-                    uLinks.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-
-                }
-                else if (uLinks.getText() == "O")
-                {
-
-                }
-                foundWinner();
-            }
-        });
-
-        uMitte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (uMitte.getText().toString().isEmpty())
-                {
-                    uMitte.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-                }
-                else if (uMitte.getText() == "O")
-                {
-
-                }
-                foundWinner();
-
-            }
-        });
-
-        uRechts.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (uRechts.getText().toString().isEmpty())
-                {
-                    uRechts.setText("X");
-                    b++;
-                    if (b <= 5)
-                    {
-                        autoPlayer();
-                    }
-
-                }
-                else if (uRechts.getText() == "O")
-                {
-
-                }
-                foundWinner();
-
-            }
-        });
-        //ENDE SPIELZÜGE
+        };
+        //Buttons mit dem globalen Listener versehen
+        oLinks.setOnClickListener(button_listener);
+        oMitte.setOnClickListener(button_listener);
+        oRechts.setOnClickListener(button_listener);
+        mLinks.setOnClickListener(button_listener);
+        mMitte.setOnClickListener(button_listener);
+        mRechts.setOnClickListener(button_listener);
+        uLinks.setOnClickListener(button_listener);
+        uMitte.setOnClickListener(button_listener);
+        uRechts.setOnClickListener(button_listener);
     }
 
     //COMPUTER
@@ -270,11 +89,8 @@ public class OnePlayerEasy extends AppCompatActivity
                     if (oLinks.getText().toString().isEmpty())
                     {
                         oLinks.setText("O");
+                        oLinks.setClickable(false);
                         break mainloop;
-                    }
-                    else if (oLinks.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
 
@@ -282,12 +98,9 @@ public class OnePlayerEasy extends AppCompatActivity
                     if (oMitte.getText().toString().isEmpty())
                     {
                         oMitte.setText("O");
+                        oMitte.setClickable(false);
                         break mainloop;
 
-                    }
-                    else if (oMitte.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
 
@@ -295,55 +108,40 @@ public class OnePlayerEasy extends AppCompatActivity
                     if (oRechts.getText().toString().isEmpty())
                     {
                         oRechts.setText("O");
+                        oRechts.setClickable(false);
                         break mainloop;
-                    }
-                    else if (oRechts.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
                 case 3:
                     if (mLinks.getText().toString().isEmpty())
                     {
                         mLinks.setText("O");
+                        mLinks.setClickable(false);
                         break mainloop;
-                    }
-                    else if (mLinks.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
                 case 4:
                     if (mMitte.getText().toString().isEmpty())
                     {
                         mMitte.setText("O");
+                        mMitte.setClickable(false);
                         break mainloop;
-                    }
-                    else if (mMitte.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
                 case 5:
                     if (mRechts.getText().toString().isEmpty())
                     {
                         mRechts.setText("O");
+                        mRechts.setClickable(false);
                         break mainloop;
-                    }
-                    else if (mRechts.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
                 case 6:
                     if (uLinks.getText().toString().isEmpty())
                     {
                         uLinks.setText("O");
+                        uLinks.setClickable(false);
                         break mainloop;
-                    }
-                    else if (uLinks.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
 
@@ -351,22 +149,16 @@ public class OnePlayerEasy extends AppCompatActivity
                     if (uMitte.getText().toString().isEmpty())
                     {
                         uMitte.setText("O");
+                        uMitte.setClickable(false);
                         break mainloop;
-                    }
-                    else if (uMitte.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
                 case 8:
                     if (uRechts.getText().toString().isEmpty())
                     {
                         uRechts.setText("O");
+                        uRechts.setClickable(false);
                         break mainloop;
-                    }
-                    else if (uRechts.getText() == "X")
-                    {
-                        continue;
                     }
                     break;
 
@@ -378,7 +170,6 @@ public class OnePlayerEasy extends AppCompatActivity
     //START Gewinner ermitteln
     public void foundWinner()
     {
-
         //final Intent start_MainActivity = new Intent(this, MainActivity.class);
 
         AlertDialog ad = new AlertDialog.Builder(this).create();
@@ -448,14 +239,23 @@ public class OnePlayerEasy extends AppCompatActivity
     public void wipeGame()
     {
         oLinks.setText(null);
+        oLinks.setClickable(true);
         oMitte.setText(null);
+        oMitte.setClickable(true);
         oRechts.setText(null);
+        oRechts.setClickable(true);
         mLinks.setText(null);
+        mLinks.setClickable(true);
         mMitte.setText(null);
+        mMitte.setClickable(true);
         mRechts.setText(null);
+        mRechts.setClickable(true);
         uLinks.setText(null);
+        uLinks.setClickable(true);
         uMitte.setText(null);
+        uMitte.setClickable(true);
         uRechts.setText(null);
+        uRechts.setClickable(true);
         b=1;
     }
 }
