@@ -33,6 +33,9 @@
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".OnePlayerEasy"
+        android:launchMode="singleTop"
+        android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".OnePlayerHard"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".MultiPlayerLocal"
