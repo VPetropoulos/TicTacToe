@@ -15,7 +15,7 @@ public class OnePlayerHard extends AppCompatActivity {
     Button oLinks;
     Button oMitte;
     Button oRechts;
-    //b nm
+
 
     Button mLinks;
     Button mMitte;
@@ -54,7 +54,8 @@ public class OnePlayerHard extends AppCompatActivity {
                         autoPlayer();
                     }
 
-                } else if (oLinks.getText() == "O") {
+                } else if (oLinks.getText() == "O")
+                {
 
                 }
                 foundWinner();
