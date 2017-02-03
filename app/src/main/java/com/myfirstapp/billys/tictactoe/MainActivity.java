@@ -26,6 +26,7 @@ public class MainActivity extends Activity
 
         final Intent start_OnePlayerEasy = new Intent(this, OnePlayerEasy.class);
         final Intent start_OnePlayerHard = new Intent(this, OnePlayerHard.class);
+        final Intent start_MultiPlayerLocal = new Intent(this, MultiPlayerLocal.class);
 
         //Schwierigkeitsstufe Einzelspieler auswählen
         einzelspieler.setOnClickListener(new View.OnClickListener()
@@ -40,7 +41,6 @@ public class MainActivity extends Activity
                 back.setVisibility(View.VISIBLE);
             }
         });
-
 
         //Zum Menü ZURÜCK wechseln und nur Einzel- und Mehrspieler anzeigen
         back.setOnClickListener(new View.OnClickListener()
@@ -75,6 +75,17 @@ public class MainActivity extends Activity
                 startActivity(start_OnePlayerHard);
             }
         });
+
+        //Mehrspieler local starten onClick
+        mehrspieler.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startActivity(start_MultiPlayerLocal);
+            }
+        });
+
     }
 }
 
