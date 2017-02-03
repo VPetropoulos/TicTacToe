@@ -1,14 +1,14 @@
 package com.myfirstapp.billys.tictactoe;
-import java.io.IOException;
+
 
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import org.jibble.pircbot.PircBot;
 
 
 public class MultiPlayerOnline extends AppCompatActivity
@@ -26,7 +26,8 @@ public class MultiPlayerOnline extends AppCompatActivity
     Button uLinks;
     Button uMitte;
     Button uRechts;
-
+    //final AlertDialog ad = new AlertDialog.Builder(this).create();
+    //final PIRCBOT bot = new PIRCBOT();
     int player = 1;
 
 
@@ -34,6 +35,15 @@ public class MultiPlayerOnline extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        //Dirty fix: Needed to fix NetworkOnMainThread Exception!
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
         setContentView(R.layout.activity_multiplayer_online);
         oLinks = (Button) findViewById(R.id.btnObenLinks);
         oMitte = (Button) findViewById(R.id.btnObenMitte);
@@ -47,12 +57,12 @@ public class MultiPlayerOnline extends AppCompatActivity
         uMitte = (Button) findViewById(R.id.btnUntenMitte);
         uRechts = (Button) findViewById(R.id.btnUntenRechts);
 
-        PIRCBOT bot = new PIRCBOT();
-        bot.setVerbose(true);
-        try {
+
+        //bot.setVerbose(true);
+       /* try {
             System.out.println("Attempting to join server");
-            bot.connect("servercentral.il.us.quakenet.org", 6667);
-            bot.joinChannel("#irchacks");
+            bot.connect("irc.rd9.eu");
+            bot.joinChannel("#xTiTaTocv888");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -61,12 +71,20 @@ public class MultiPlayerOnline extends AppCompatActivity
             e.printStackTrace();
         }
         if (bot.isConnected()) {
-            System.out.println("Connected!");
+            Toast.makeText(getBaseContext(), "Connected", Toast.LENGTH_LONG).show();
         }
         else {
-            System.out.println("Failed to connect.");
+            Toast.makeText(getBaseContext(), "Connection failed", Toast.LENGTH_LONG).show();
             return;
-        }
+        }*/
+
+       /* ad.setMessage("Wait for another player");
+        ad.setCancelable(false);
+        ad.show();
+        if (bot.getUsers("#TiTaToxcv888").length == 3) {
+            ad.hide();
+        }*/
+
 
 
 
@@ -80,7 +98,8 @@ public class MultiPlayerOnline extends AppCompatActivity
 
                 if (oLinks.getText().toString().isEmpty())
                 {
-
+                    //bot.sendMessage("#TiTaToxcv888", "x on 1");
+                    oLinks.setText("X");
                     b++;
                 }
                 //Prüfung nach Gewinner nach jeder Runde (Runde= SPIELER + COMPUTER waren beide dran)
@@ -123,11 +142,7 @@ public class MultiPlayerOnline extends AppCompatActivity
     //START Gewinner ermitteln
     public void foundWinner()
     {
-
-        //final Intent start_MainActivity = new Intent(this, MainActivity.class);
-
-        AlertDialog ad = new AlertDialog.Builder(this).create();
-
+        final AlertDialog ad = new AlertDialog.Builder(this).create();
         //Wenn 3 Felder nebeinander mit dem selben Symbol ausgefüllt und die mitte davon nicht leer ->
         // -> Zeichen in der Mitte bestimmt den Sieger
         //Alertdialog aufrufen
