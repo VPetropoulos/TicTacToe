@@ -41,9 +41,6 @@
         <activity android:name=".MultiPlayerLocal"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".MultiPlayerOnline"
-            android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>
