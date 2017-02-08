@@ -16,7 +16,6 @@ public class OnePlayerHard extends AppCompatActivity {
     Button oMitte;
     Button oRechts;
 
-
     Button mLinks;
     Button mMitte;
     Button mRechts;
@@ -348,7 +347,8 @@ public class OnePlayerHard extends AppCompatActivity {
         }
     }
 
-    public void wipeGame() {
+    public void wipeGame()
+    {
         oLinks.setText(null);
         oMitte.setText(null);
         oRechts.setText(null);
