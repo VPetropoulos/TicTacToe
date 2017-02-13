@@ -210,93 +210,119 @@ public class OnePlayerHard extends AppCompatActivity {
 
             }
         });
-
     }
 
     public void autoPlayer() {
         mainloop:
         while (true) {
-
-            int zahl = (int) ((Math.random()) * 8);
-
-            switch (zahl) {
-                case 0:
-                    if (oLinks.getText().toString().isEmpty()) {
-                        oLinks.setText("O");
-                        break mainloop;
-                    } else if (oLinks.getText() == "X") {
-                        continue;
-                    }
-                    break;
-
-                case 1:
-                    if (oMitte.getText().toString().isEmpty()) {
-                        oMitte.setText("O");
-                        break mainloop;
-
-                    } else if (oMitte.getText() == "X") {
-                        continue;
-                    }
-                    break;
-
-                case 2:
-                    if (oRechts.getText().toString().isEmpty()) {
-                        oRechts.setText("O");
-                        break mainloop;
-                    } else if (oRechts.getText() == "X") {
-                        continue;
-                    }
-                    break;
-                case 3:
-                    if (mLinks.getText().toString().isEmpty()) {
-                        mLinks.setText("O");
-                        break mainloop;
-                    } else if (mLinks.getText() == "X") {
-                        continue;
-                    }
-                    break;
-                case 4:
-                    if (mMitte.getText().toString().isEmpty()) {
-                        mMitte.setText("O");
-                        break mainloop;
-                    } else if (mMitte.getText() == "X") {
-                        continue;
-                    }
-                    break;
-                case 5:
-                    if (mRechts.getText().toString().isEmpty()) {
-                        mRechts.setText("O");
-                        break mainloop;
-                    } else if (mRechts.getText() == "X") {
-                        continue;
-                    }
-                    break;
-                case 6:
-                    if (uLinks.getText().toString().isEmpty()) {
-                        uLinks.setText("O");
-                        break mainloop;
-                    } else if (uLinks.getText() == "X") {
-                        continue;
-                    }
-                    break;
-
-                case 7:
-                    if (uMitte.getText().toString().isEmpty()) {
-                        uMitte.setText("O");
-                        break mainloop;
-                    } else if (uMitte.getText() == "X") {
-                        continue;
-                    }
-                    break;
-                case 8:
-                    if (uRechts.getText().toString().isEmpty()) {
-                        uRechts.setText("O");
-                        break mainloop;
-                    } else if (uRechts.getText() == "X") {
-                        continue;
-                    }
-                    break;
-
+            
+            if (oLinks.getText() == oMitte.getText() && oRechts.getText().toString().isEmpty())
+            {
+                oRechts.setText("O");
+            }
+            else if (oLinks.getText() == oRechts.getText() && oMitte.getText().toString().isEmpty())
+            {
+                oMitte.setText("O");
+            }
+            else if (oRechts.getText() == oRechts.getText() && oLinks.getText().toString().isEmpty())
+            {
+                oLinks.setText("O");
+            }
+            else if (mLinks.getText() == mMitte.getText() && mRechts.getText().toString().isEmpty())
+            {
+                mRechts.setText("O");
+            }
+            else if (mLinks.getText() == mRechts.getText() && mMitte.getText().toString().isEmpty())
+            {
+                mMitte.setText("O");
+            }
+            else if (mRechts.getText() == mRechts.getText() && mLinks.getText().toString().isEmpty())
+            {
+                mLinks.setText("O");
+            }
+            else if (uLinks.getText() == uMitte.getText() && uRechts.getText().toString().isEmpty())
+            {
+                uRechts.setText("O");
+            }
+            else if (uLinks.getText() == uRechts.getText() && uMitte.getText().toString().isEmpty())
+            {
+                uMitte.setText("O");
+            }
+            else if (uRechts.getText() == uMitte.getText() && uLinks.getText().toString().isEmpty())
+            {
+                uLinks.setText("O");
+            }
+            else if (oLinks.getText() == mLinks.getText() && uLinks.getText().toString().isEmpty())
+            {
+                uLinks.setText("O");
+            }
+            else if (mLinks.getText() == uLinks.getText() && oLinks.getText().toString().isEmpty())
+            {
+                oLinks.setText("O");
+            }
+            else if (oLinks.getText() == uLinks.getText() && mLinks.getText().toString().isEmpty())
+            {
+                mLinks.setText("O");
+            }
+            else if (oMitte.getText() == mMitte.getText() && uMitte.getText().toString().isEmpty())
+            {
+                uMitte.setText("O");
+            }
+            else if (oMitte.getText() == uMitte.getText() && mMitte.getText().toString().isEmpty())
+            {
+                mMitte.setText("O");
+            }
+            else if (mMitte.getText() == uMitte.getText() && oMitte.getText().toString().isEmpty())
+            {
+                oMitte.setText("O");
+            }
+            else if (oMitte.getText() == mMitte.getText() && uMitte.getText().toString().isEmpty())
+            {
+                uMitte.setText("O");
+            }
+            else if (oMitte.getText() == uMitte.getText() && mMitte.getText().toString().isEmpty())
+            {
+                mMitte.setText("O");
+            }
+            else if (oRechts.getText() == mRechts.getText() && uRechts.getText().toString().isEmpty())
+            {
+                uRechts.setText("O");
+            }
+            else if (uRechts.getText() == oRechts.getText() && mRechts.getText().toString().isEmpty())
+            {
+                mRechts.setText("O");
+            }
+            else if (uRechts.getText() == mRechts.getText() && oRechts.getText().toString().isEmpty())
+            {
+                oRechts.setText("O");
+            }
+            else if (oLinks.getText() == mMitte.getText() && uRechts.getText().toString().isEmpty())
+            {
+                uRechts.setText("O");
+            }
+            else if (oLinks.getText() == uRechts.getText() && mMitte.getText().toString().isEmpty())
+            {
+                mMitte.setText("O");
+            }
+            else if (mMitte.getText() == uRechts.getText() && oLinks.getText().toString().isEmpty())
+            {
+                oLinks.setText("O");
+            }
+            else if (oRechts.getText() == mMitte.getText() && uLinks.getText().toString().isEmpty())
+            {
+                uLinks.setText("O");
+            }
+            else if (oRechts.getText() == uLinks.getText() && mMitte.getText().toString().isEmpty())
+            {
+                mMitte.setText("O");
+            }
+            else if (mMitte.getText() == uLinks.getText() && oRechts.getText().toString().isEmpty())
+            {
+                oRechts.setText("O");
+            }
+            else
+            {
+                continue;
             }
         }
     }
