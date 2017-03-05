@@ -226,7 +226,7 @@ public class OnePlayerHard extends AppCompatActivity {
                 oMitte.setText("O");
                 break;
             }
-            else if (oRechts.getText() == oRechts.getText() && oLinks.getText().toString().isEmpty())
+            else if (oRechts.getText() == oMitte.getText() && oLinks.getText().toString().isEmpty())
             {
                 oLinks.setText("O");
                 break;
@@ -241,7 +241,7 @@ public class OnePlayerHard extends AppCompatActivity {
                 mMitte.setText("O");
                 break;
             }
-            else if (mRechts.getText() == mRechts.getText() && mLinks.getText().toString().isEmpty())
+            else if (mRechts.getText() == mMitte.getText() && mLinks.getText().toString().isEmpty())
             {
                 mLinks.setText("O");
                 break;
@@ -289,16 +289,6 @@ public class OnePlayerHard extends AppCompatActivity {
             else if (mMitte.getText() == uMitte.getText() && oMitte.getText().toString().isEmpty())
             {
                 oMitte.setText("O");
-                break;
-            }
-            else if (oMitte.getText() == mMitte.getText() && uMitte.getText().toString().isEmpty())
-            {
-                uMitte.setText("O");
-                break;
-            }
-            else if (oMitte.getText() == uMitte.getText() && mMitte.getText().toString().isEmpty())
-            {
-                mMitte.setText("O");
                 break;
             }
             else if (oRechts.getText() == mRechts.getText() && uRechts.getText().toString().isEmpty())
