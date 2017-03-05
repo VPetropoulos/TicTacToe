@@ -35,26 +35,6 @@
             android:background="@color/btn_login_bg"
             android:textColor="@color/btn_login"
             android:fontFamily="sans-serif" />
-        <Button
-            android:text="Lokales Spiel"
-            android:id="@+id/btnMehrspieler_lokal"
-            android:visibility="invisible"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@color/btn_login_bg"
-            android:textColor="@color/btn_login"
-            android:fontFamily="sans-serif" />
-        <Button
-            android:text="Online"
-            android:id="@+id/btnMehrspieler_online"
-            android:visibility="invisible"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:background="@color/btn_login_bg"
-            android:textColor="@color/btn_login"
-            android:fontFamily="sans-serif" />
 
         <Button
             android:id="@+id/btnLeicht"
@@ -78,7 +58,16 @@
             android:textColor="@color/btn_login"
             android:fontFamily="sans-serif" />
 
-
+        <Button
+            android:text="Lokales Spiel"
+            android:id="@+id/btnMehrspieler_lokal"
+            android:visibility="invisible"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/btn_login_bg"
+            android:textColor="@color/btn_login"
+            android:fontFamily="sans-serif" />
 
         <Button
             android:text="@string/btnBack"
@@ -90,6 +79,18 @@
             android:background="@color/btn_login_bg"
             android:textColor="@color/btn_login"
             android:fontFamily="sans-serif" />
+
+        <Button
+            android:text="Online"
+            android:id="@+id/btnMehrspieler_online"
+            android:visibility="invisible"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="@color/btn_login_bg"
+            android:textColor="@color/btn_login"
+            android:fontFamily="sans-serif" />
+
 
     </LinearLayout>
 
