@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">TicTacToe</string>
     <string name="Einzelspieler" />
-    <string name="button_Einzelspieler">Einzelspieler</string>
+    <string name="button_Einzelspieler">Singleplayer</string>
     <string name="button_Multiplayer">Multiplayer</string>
-    <string name="btnLeicht">Leicht</string>
-    <string name="btnSchwierig">Schwierig</string>
-    <string name="btnMehrspieler">Mehrspieler</string>
-    <string name="btnBack">Zurück</string>
-    <string name="spieler">Spieler VS. Spieler</string>
-    <string name="spieler_spieler">Spieler VS. Spieler</string>
-    <string name="spielerVSspieler">Spieler VS. Spieler</string>
+    <string name="btnLeicht">Easy</string>
+    <string name="btnSchwierig">Hard</string>
+    <string name="btnMehrspieler">Multiplayer</string>
+    <string name="btnBack">Back</string>
+    <string name="spieler">Player VS. Player</string>
+    <string name="spieler_spieler">Player VS. Player</string>
+    <string name="spielerVSspieler">Player VS. Player</string>
     <string name="Online">Online</string>
-    <string name="OnlineBack">Zurück</string>
+    <string name="OnlineBack">Back</string>
 </resources>

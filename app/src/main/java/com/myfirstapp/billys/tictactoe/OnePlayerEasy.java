@@ -372,57 +372,74 @@ public class OnePlayerEasy extends AppCompatActivity
         AlertDialog ad = new AlertDialog.Builder(this).create();
 
 
-        if (oLinks.getText() == oMitte.getText() && oMitte.getText() == oRechts.getText() && !oMitte.getText().toString().isEmpty())
-        {
-            ad.setMessage(oMitte.getText() + " hat Gewonnen");
+        if (oLinks.getText() == "X" && oMitte.getText() == "X" && oRechts.getText() == "X") {
+            ad.setMessage(oMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (mLinks.getText() == "X" && mMitte.getText() == "X" && mRechts.getText() == "X") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (uLinks.getText() == "X" && uMitte.getText()== "X" && uRechts.getText()== "X") {
+            ad.setMessage(uMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oLinks.getText()== "X" && mLinks.getText()== "X" && uLinks.getText()== "X") {
+            ad.setMessage(mLinks.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oMitte.getText() == "X" && mMitte.getText() == "X" && uMitte.getText() == "X") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oRechts.getText() == "X" && mRechts.getText() == "X" && uRechts.getText() == "X") {
+            ad.setMessage(mRechts.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oLinks.getText() == "X" && mMitte.getText() == "X" && uRechts.getText() == "X") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oRechts.getText() == "X" && mMitte.getText()== "X" && uLinks.getText() == "X") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
             ad.show();
             wipeGame();
         }
-        else if (mLinks.getText() == mMitte.getText() && mMitte.getText() == mRechts.getText() && !mMitte.getText().toString().isEmpty())
-        {
-            ad.setMessage(mMitte.getText() + " hat Gewonnen");
+        else if (oLinks.getText() == "O" && oMitte.getText() == "O" && oRechts.getText() == "O") {
+            ad.setMessage(oMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (mLinks.getText() == "O" && mMitte.getText() == "O" && mRechts.getText() == "O") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (uLinks.getText() == "O" && uMitte.getText()== "O" && uRechts.getText()== "O") {
+            ad.setMessage(uMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oLinks.getText()== "O" && mLinks.getText()== "O" && uLinks.getText()== "O") {
+            ad.setMessage(mLinks.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oMitte.getText() == "O" && mMitte.getText() == "O" && uMitte.getText() == "O") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oRechts.getText() == "O" && mRechts.getText() == "O" && uRechts.getText() == "O") {
+            ad.setMessage(mRechts.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oLinks.getText() == "O" && mMitte.getText() == "O" && uRechts.getText() == "O") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
+            ad.show();
+            wipeGame();
+        } else if (oRechts.getText() == "O" && mMitte.getText()== "O" && uLinks.getText() == "O") {
+            ad.setMessage(mMitte.getText() + " HAS WON!");
             ad.show();
             wipeGame();
         }
-        else if (uLinks.getText() == uMitte.getText() && uMitte.getText() == uRechts.getText() && !uMitte.getText().toString().isEmpty())
-        {
-        ad.setMessage(uMitte.getText() + " hat Gewonnen");
-        ad.show();
-            wipeGame();
-        }
-        else if (oLinks.getText() == mLinks.getText() && mLinks.getText() == uLinks.getText() && !mLinks.getText().toString().isEmpty())
-        {
-            ad.setMessage(mLinks.getText() + " hat Gewonnen");
-            ad.show();
-            wipeGame();
-        }
-        else if (oMitte.getText() == mMitte.getText() && mMitte.getText() == uMitte.getText() && !mMitte.getText().toString().isEmpty())
-        {
-            ad.setMessage(mMitte.getText() + " hat Gewonnen");
-            ad.show();
-            wipeGame();
-        }
-        else if (oRechts.getText() == mRechts.getText() && mRechts.getText() == uRechts.getText() && !mRechts.getText().toString().isEmpty())
-        {
-            ad.setMessage(mRechts.getText() + " hat Gewonnen");
-            ad.show();
-            wipeGame();
-        }
-        else if (oLinks.getText() == mMitte.getText() && mMitte.getText() == uRechts.getText() && !mMitte.getText().toString().isEmpty())
-        {
-            ad.setMessage(mMitte.getText() + " hat Gewonnen");
-            ad.show();
-            wipeGame();
-        }
-        else if (oRechts.getText() == mMitte.getText() && mMitte.getText() == uLinks.getText() && !mMitte.getText().toString().isEmpty())
-        {
-            ad.setMessage(mMitte.getText() + " hat Gewonnen");
-            ad.show();
-            wipeGame();
-        }
-        else if(!oLinks.getText().toString().isEmpty() && !oMitte.getText().toString().isEmpty() && !oRechts.getText().toString().isEmpty() && !mLinks.getText().toString().isEmpty() && !mMitte.getText().toString().isEmpty() && !mLinks.getText().toString().isEmpty() && !uLinks.getText().toString().isEmpty() && !uMitte.getText().toString().isEmpty() && !uRechts.getText().toString().isEmpty())
-        {
-            ad.setMessage("Unentschieden");
+        else if (!oLinks.getText().toString().isEmpty() && !oMitte.getText().toString().isEmpty() && !oRechts.getText().toString().isEmpty() && !mLinks.getText().toString().isEmpty() && !mMitte.getText().toString().isEmpty() && !mLinks.getText().toString().isEmpty() && !uLinks.getText().toString().isEmpty() && !uMitte.getText().toString().isEmpty() && !uRechts.getText().toString().isEmpty()) {
+            ad.setMessage("DRAW!!");
             ad.show();
             wipeGame();
         }
